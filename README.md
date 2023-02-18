@@ -14,3 +14,8 @@ Code/Document repository for CSCI-P 565 Software Engineering - Spring 2023
 * Gnaneswari Lolugu
 * Srikar Kashyap Pulipaka
 
+
+Dependencies:
+pip install psycopg2
+pip install crispy-forms
+pip install crispy-bootstrap4

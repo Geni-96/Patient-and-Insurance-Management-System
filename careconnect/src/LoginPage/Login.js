@@ -15,17 +15,17 @@ export default function login() {
           <div className="form">
             <form action="form.html"/>
             <div id="radio">
-              <label className="usertype">Doctor</label>
+              <label name="usertype">Doctor</label>
               <input type="radio" id="usertype" value="Doctor"/>
-              <label className="usertype">Patient</label>
+              <label name="usertype">Patient</label>
               <input type="radio" id="usertype" value="Patient"/>
-              <label className="usertype">InsuranceProvider</label>
+              <label name="usertype">InsuranceProvider</label>
               <input type="radio" id="usertype" value="Insurance Provider"/><br/>
             </div>
 
             
-            <input type="text" placeholder="Email" id="email" /><br/> 
-            <input type="password" placeholder="Password" id="password"/><br/>
+            <input type="text" placeholder="Email" id="email" required/><br/> 
+            <input type="password" placeholder="Password" id="password" required/><br/>
             <input type="submit" id="submit" value="Login"></input>
             <p>Don't have an account? Create an account</p>
           </div>

@@ -4,6 +4,15 @@
 {% block content %} 
 <form method="post">
     {% csrf_token %}
+    <div class="form-group">
+        <label for="user_type">User Type</label>
+        <select name="user_type" class="form-control" required>
+          <option value="">Select User Type</option>
+          <option value="patient">Patient</option>
+          <option value="doctor">Doctor</option>
+          <option value="insurance_provider">Insurance Provider</option>
+        </select>
+      </div>
     {{form|crispy}}
     <p>Have an account?<a href="/login"> login</a>!</p>
     <button class="btn btn-success">Register</button>

@@ -1,16 +1,16 @@
 from django.shortcuts import render, redirect
-from .forms import RegistrationForm
+from .forms import RegistrationForm, PatientRegistrationForm, InsuranceProviderRegistrationForm, DoctorRegistrationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from dotenv import load_dotenv
 import smtplib
 from email.message import EmailMessage
+from django.contrib.auth import get_user_model
 import os
 
 # from .send_email import send_email
 # Create your views here.
-
 
 def send_email(target, message_type='registration'):
     load_dotenv('pwds.env')
@@ -61,21 +61,55 @@ def home(response):
     return render(response, "main/home.html", {})
 
 
-def signup(response):
-    if response.POST:
-        print(response.POST)
-        form = RegistrationForm(response.POST)
-        print(form)
-        if form.is_valid():
-            user = form.save()
-            # get user email from the form
-            user_email = form.cleaned_data.get('email')
-            username = form.cleaned_data.get('username')
-            user_type = form.cleaned_data.get('user_type')
-            send_email(user_email, 'registration')
-            # user = form.save()
-            login(response, user)
-            return redirect("/home", {'username': username, 'user_type': user_type})
+# def signup(response):
+#     if response.POST:
+#         print(response.POST)
+#         form = RegistrationForm(response.POST)
+#         print(form)
+#         if form.is_valid():
+#             user = form.save()
+#             # get user email from the form
+#             user_email = form.cleaned_data.get('email')
+#             username = form.cleaned_data.get('username')
+#             user_type = form.cleaned_data.get('user_type')
+#             send_email(user_email, 'registration')
+#             # user = form.save()
+#             login(response, user)
+#             return redirect("/home", {'username': username, 'user_type': user_type})
+#     else:
+#         form = RegistrationForm()
+#     return render(response, "registration/signup.html", {"form": form})
+
+def signup(request):
+    if request.method == 'POST':
+        user_type = request.POST.get('user_type')
+        if user_type == 'patient':
+            form = PatientRegistrationForm(request.POST)
+        elif user_type == 'doctor':
+            form = DoctorRegistrationForm(request.POST)
+        elif user_type == 'insurance_provider':
+            form = InsuranceProviderRegistrationForm(request.POST)
+        else:
+            form = None
+
+        if form and form.is_valid():
+            user = form.save(commit=False)
+            user.user_type = user_type
+            user.save()
+            
+            User = get_user_model()
+            user_data = {
+                'username': user.username,
+                'password': user.password,
+                'email': user.email,
+            }
+            User.objects.create_user(**user_data)
+            # auth_user = authenticate(username=user.username, password=request.POST['password1'])
+            # login(request, auth_user)
+            return redirect('login')
+
     else:
-        form = RegistrationForm()
-    return render(response, "registration/signup.html", {"form": form})
+        form = None
+
+    return render(request, 'registration/signup.html', {'form': form})
+

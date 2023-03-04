@@ -1,0 +1,70 @@
+{% extends 'main/base.html' %} {% load static %} {% block title %} Home
+{%endblock %} {% block content %}
+
+<!-- Display profile details in HTML form -->
+
+{% if user.is_authenticated %}
+<h1>Welcome {{ user.username }}</h1>
+{{ user_details.phone_number }}
+<h2>Your Profile</h2>
+<form action="{% url 'profile' %}" method="POST">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>{{ user_form.first_name }}</td>
+      <td>{{ user_form.username }}</td>
+    </tr>
+    <tr>
+      <td>{{ user_form.email.label_tag }}</td>
+      <td>{{ user_form.email }}</td>
+    </tr>
+    <tr>
+      <td>{{ user_form.first_name.label_tag }}</td>
+      <td>{{ user_form.first_name }}</td>
+    </tr>
+    <tr>
+      <td>{{ user_form.last_name.label_tag }}</td>
+      <td>{{ user_form.last_name }}</td>
+    </tr>
+    <tr>
+      <td>{{ user_form.password.label_tag }}</td>
+      <td>{{ user_form.password }}</td>
+    </tr>
+    <tr>
+      <td>{{ user_form.password2.label_tag }}</td>
+      <td>{{ user_form.password2 }}</td>
+    </tr>
+    <tr>
+      <td>{{ profile_form.address.label_tag }}</td>
+      <td>{{ profile_form.address }}</td>
+    </tr>
+    <tr>
+      <td>{{ profile_form.city.label_tag }}</td>
+      <td>{{ profile_form.city }}</td>
+    </tr>
+    <tr>
+      <td>{{ profile_form.state.label_tag }}</td>
+      <td>{{ profile_form.state }}</td>
+    </tr>
+    <tr>
+      <td>{{ profile_form.country.label_tag }}</td>
+      <td>{{ profile_form.country }}</td>
+    </tr>
+    <tr>
+      <td>{{ profile_form.zipcode.label_tag }}</td>
+      <td>{{ profile_form.zipcode }}</td>
+    </tr>
+    <tr>
+      <td>{{ profile_form.phone.label_tag }}</td>
+      <td>{{ profile_form.phone }}</td>
+    </tr>
+    <tr>
+      <td>{{ profile_form.image.label_tag }}</td>
+      <td>{{ profile_form.image }}</td>
+    </tr>
+  </table>
+  <input type="submit" value="Update" />
+</form>
+{% else %}
+<h1>Please login to view your profile</h1>
+{% endif %} {% endblock %}

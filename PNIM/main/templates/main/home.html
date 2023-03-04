@@ -1,64 +1,116 @@
-{% extends 'main/base.html' %}
-{% block title %}Home{% endblock %}
-
-{% block content %}
+{% extends 'main/base.html' %} {% load static %} {% block title %} Home
+{%endblock %} {% block content %}
 <br />
 <!-- <h1>Home Page</h1> -->
 <!-- {{user.user_type}} -->
-      <!-- Welcome Banner for Product -->
-      <div class="row">
-        <div class="col-md-12">
-          <h1>Welcome to CareConnect!</h1>
-        </div>
-      </div>
-      <br />
+<!-- Welcome Banner for Product -->
 
-      <!-- Product Description -->
-      <div class="row">
-        <div class="col-md-12">
-          <h4>For all your health needs!</h4>
-          <p>
-            CareConnect is a web application that allows patients to connect
-            with doctors, search for appointments, and book appointments. It
-            also allows doctors to manage their appointments and patients. It is
-            a one-stop solution for all your health needs. It also allows you to
-            search for insurance providers and select insurance plans.
-          </p>
-        </div>
-      </div>
-
-      <!-- Features Menu with 3 columns data and images -->
-      <div class="row">
-        <div class="col-md-4">
-          <h4>Patients</h4>
-          <ul>
-            <li>Search for Doctors</li>
-            <li>Book Appointments</li>
-            <li>Search for Insurance Providers</li>
-            <li>Select Insurance Providers</li>
-            <li>Leave Reviews for Doctors and Insurance Providers</li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h4>Doctors</h4>
-          <ul>
-            <li>Advertise appointments</li>
-            <li>Get patient bookings</li>
-            <li>Patient Information beforehand (when shared)</li>
-            <li>Chat with other doctors</li>
-            <li>Sync with Insurance Providers</li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h4>Insurance Providers</h4>
-          <ul>
-            <li>Advertise new plans</li>
-            <li>Conduct marketing</li>
-            <li>Get patient details for current plans</li>
-            <li>Sync with doctors</li>
-            <li>Get reviews for packages</li>
-          </ul>
-        </div>
-      </div>
+{% comment %}
+<div class="row">
+  <div class="col-md-12">
+    <h1>Welcome to CareConnect!</h1>
+  </div>
 </div>
+<br />
+
+<!-- Product Description -->
+<div class="row">
+  <div class="col-md-12">
+    <h4>For all your health needs!</h4>
+    <p>
+      CareConnect is a web application that allows patients to connect with
+      doctors, search for appointments, and book appointments. It also allows
+      doctors to manage their appointments and patients. It is a one-stop
+      solution for all your health needs. It also allows you to search for
+      insurance providers and select insurance plans.
+    </p>
+  </div>
+</div>
+
+<!-- Features Menu with 3 columns data and images -->
+<div class="row">
+  <div class="col-md-4">
+    <h4>Patients</h4>
+    <ul>
+      <li>Search for Doctors</li>
+      <li>Book Appointments</li>
+      <li>Search for Insurance Providers</li>
+      <li>Select Insurance Providers</li>
+      <li>Leave Reviews for Doctors and Insurance Providers</li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h4>Doctors</h4>
+    <ul>
+      <li>Advertise appointments</li>
+      <li>Get patient bookings</li>
+      <li>Patient Information beforehand (when shared)</li>
+      <li>Chat with other doctors</li>
+      <li>Sync with Insurance Providers</li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h4>Insurance Providers</h4>
+    <ul>
+      <li>Advertise new plans</li>
+      <li>Conduct marketing</li>
+      <li>Get patient details for current plans</li>
+      <li>Sync with doctors</li>
+      <li>Get reviews for packages</li>
+    </ul>
+  </div>
+</div>
+{% endcomment %}
+<!-- Display all doctor details from results -->
+<h1>Welcome {{ user }}</h1>
+<div class="row">
+  <div class="col-md-12">
+    <h4>Search for Doctors here.</h4>
+    <p>
+      Type something in the input field to search the table for first names,
+      last names or emails:
+    </p>
+    <input
+      class="form-control"
+      id="myInput"
+      type="text"
+      placeholder="Search.."
+    />
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Specialization</th>
+          <th scope="col">Hospital</th>
+          <th scope="col">Address</th>
+          <th scope="col">Contact</th>
+          <th scope="col">Image</th>
+          <th scope="col">Ratings</th>
+        </tr>
+      </thead>
+      <tbody id="myTable">
+        {% for doctor in results %}
+        <tr>
+          <td>{{ doctor.firstname }}</td>
+          <td>{{ doctor.specialization }}</td>
+          <td>{{ doctor.hospital }}</td>
+          <td>{{ doctor.address }}</td>
+          <td>{{ doctor.phone_number }}</td>
+          <td>4.6 (223 reviews)</td>
+          <td>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Male_Doctor_Flat_Icon_Vector.svg/240px-Male_Doctor_Flat_Icon_Vector.svg.png"
+              alt="Doctor Image"
+              width="100"
+              height="100"
+            />
+          </td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
 {% endblock %}

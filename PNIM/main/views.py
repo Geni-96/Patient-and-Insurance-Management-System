@@ -7,10 +7,12 @@ from dotenv import load_dotenv
 import smtplib
 from email.message import EmailMessage
 from django.contrib.auth import get_user_model
+from .models import Patient, Doctor, InsuranceProvider
 import os
 
 # from .send_email import send_email
 # Create your views here.
+
 
 def send_email(target, message_type='registration'):
     load_dotenv('pwds.env')
@@ -56,9 +58,15 @@ def landing(response):
 def home(response):
     # redirect to react app
     # return
-
+    results = []
+    # get all doctors from database
+    doctors = Doctor.objects.all()
+    # doctors = Patient.objects.all()
+    print(doctors)
+    # for doctor in doctor
+    results.append(doctors)
     # return render(response, "http://localhost:3000/", {})
-    return render(response, "main/home.html", {})
+    return render(response, "main/home.html", {'results': list(doctors),'user': response.user})
 
 
 # def signup(response):
@@ -80,6 +88,34 @@ def home(response):
 #         form = RegistrationForm()
 #     return render(response, "registration/signup.html", {"form": form})
 
+@login_required(login_url="/login")
+def profile_page(response):
+    user_details = response.user
+    # get patients with the same username
+    try:
+        patient = Patient.objects.filter(username=user_details)
+    except Patient.DoesNotExist:
+        patient = None
+    try:
+        doctor = Doctor.objects.filter(username=user_details)
+    except Doctor.DoesNotExist:
+        doctor = None
+    try:
+        insurance = InsuranceProvider.objects.filter(username=user_details)
+    except InsuranceProvider.DoesNotExist:
+        insurance = None
+    if patient:
+        user_details = patient
+        print('patient', patient)
+    elif doctor:
+        user_details = doctor
+        print('doctor', doctor)
+    elif insurance:
+        user_details = insurance
+        print('insurance', insurance)
+    return render(response, "main/profile.html", {'user_details': user_details})
+
+
 def signup(request):
     if request.method == 'POST':
         user_type = request.POST.get('user_type')
@@ -96,7 +132,23 @@ def signup(request):
             user = form.save(commit=False)
             user.user_type = user_type
             user.save()
-            
+            user_email = form.cleaned_data.get('email')
+            username = form.cleaned_data.get('username')
+            send_email(user_email, 'registration')
+            # save Patient, Doctor or InsuranceProvider
+            # if user_type == 'patient':
+            #     patient = form.save_patient()
+            #     patient.user = user
+            #     patient.save()
+            # elif user_type == 'doctor':
+            #     doctor = form.save_doctor()
+            #     doctor.user = user
+            #     doctor.save()
+            # elif user_type == 'insurance_provider':
+            #     insurance_provider = form.save_insurance_provider()
+            #     insurance_provider.user = user
+            #     insurance_provider.save()
+
             User = get_user_model()
             user_data = {
                 'username': user.username,
@@ -106,10 +158,9 @@ def signup(request):
             User.objects.create_user(**user_data)
             # auth_user = authenticate(username=user.username, password=request.POST['password1'])
             # login(request, auth_user)
-            return redirect('login')
+            return redirect('home')
+        # return render(request, 'home.html', {'form': form})
 
     else:
         form = None
-
     return render(request, 'registration/signup.html', {'form': form})
-

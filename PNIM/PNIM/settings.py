@@ -90,7 +90,7 @@ DATABASES = {
     # },
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": r"C:\Users\srika\Desktop\Spring2023\CSCI-P 565 Software Engineering I\Project\SE_Final_Project\PNIM\db.sqlite3",
+        "NAME": "db.sqlite3",
         "USER": "",
         "PASSWORD": "",
         "HOST": "",

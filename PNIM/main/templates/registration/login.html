@@ -296,10 +296,15 @@
       <div id="pane2" class="card">
         <div class="box">
           <img src="https://cdn-icons-png.flaticon.com/512/6681/6681204.png" />
-          <h2>Login</h2>
+        {% if user.is_authenticated %}
+          <h2>Logout</h2>
+        {% else %}
+            <h2>Login</h2>
+        {% endif %}
         </div>
         <div class="form">
-          <form action="form.html"/>
+          
+          
           <div class="dropdown">
           <button class="dropbtn">Account Type</button>
            <div class="dropdown-content">
@@ -308,6 +313,7 @@
               <li href="#">Insurance provider</li>
               </div>
           </div>
+
           {% comment %} <input type="text" placeholder="Email" id="email" required/><br/> 
           <input type="password" placeholder="Password" id="password" required/><br/>
           <input type="submit" id="submit" value="Login"></input> {% endcomment %}
@@ -316,7 +322,7 @@
             <br>
             {{form.as_p}}
             <p>Dont have an account, Click<a href="/signup"> here</a>!</p>
-            <button class="">Login</button>
+            <button class="btn btn-success">Login</button>
         </form>
             {% comment %} <p>Don't have an account? Create an account</p> {% endcomment %}
         </div>

@@ -12,6 +12,8 @@ import os
 
 # from .send_email import send_email
 # Create your views here.
+def landingtemp(response):
+    return render(response, "main/basenew.html", {})
 
 
 def send_email(target, message_type='registration'):

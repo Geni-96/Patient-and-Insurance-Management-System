@@ -1,0 +1,78 @@
+.doc-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(234, 242, 245);
+}
+.search-wrap{
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+}
+select{
+    margin-right: 50px;
+    height: 20px;
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+button[type="submit"]{
+    width: 20%;
+    background: #4E9BA6;
+    color: white;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    border-radius: 5px;
+}
+input{
+    border-radius: 5px;
+    text-indent: 10px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    border-color: #d5d4d8;
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin: 20px;
+}
+.Details{
+    margin-left: 150px;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right:80px;
+    cursor: pointer;
+}
+.doc-buttons{
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom:10px;
+}
+button{
+    color: white ;
+    background-color: #4E9BA6;
+}
+
+.page-buttons{
+    margin-left: 25%;
+    margin-top: 20px;
+}
+.buttons-appointment{
+    margin-right: 60px;
+    overflow: hidden;
+    border-radius: 5px;
+    width: 300px;
+    padding: 7px;
+}

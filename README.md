@@ -16,9 +16,20 @@ Code/Document repository for CSCI-P 565 Software Engineering - Spring 2023
 
 
 # Dependencies:
+- pip install django
 - pip install psycopg2
-- pip install crispy-forms
+- pip install django-crispy-forms
 - pip install crispy-bootstrap4
+- pip install django-rest-framework
+- pip install django-oauth-tookit
+- pip install djangorestframework-simplejwt
+- pip install django-cors-headers
+- npm i bootstrap
+- npm i axios
+- npm i react-router-dom
+- npm install react-bootstrap
+
+# References
 
 # Postgres:
 - dbname = postgres
@@ -26,5 +37,6 @@ Code/Document repository for CSCI-P 565 Software Engineering - Spring 2023
 - password = postgres
 
 # Django Admin:
-- username: admin
-- password: admin
+- username: geni
+- password: 12345
+

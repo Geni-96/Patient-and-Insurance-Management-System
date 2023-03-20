@@ -1,13 +1,11 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import TaskSerializer, PatientSerializer, PatientUpdateSerializer
 from .models import Task, Patients
 from django.contrib.auth.models import User
 from rest_framework import status
-from django.contrib.auth import authenticate, login
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
@@ -28,60 +26,13 @@ class MyTokenObtainPairView(TokenObtainPairView):
 @api_view(['GET'])
 def apiOverview(request):
     api_urls = {
-        'List' : '/task-list/',
-        'Detail View' : '/task-detail/<str:pk>/',
-        'Create' : '/task-create/',
-        'Update': '/task-update/<str:pk>/',
+        'login' : '/login/',
+        'patient_detail' : '/patient-detail/<str:username>/',
+        'patient_create' : '/patient-create/',
+        'patient_update': '/patient-update/<str:username>/',
         'Delete': '/task-delete/<str:pk>/'
     }
     return Response(api_urls)
-
-
-@api_view(['GET'])
-def taskList(request):
-    tasks = Task.objects.all()
-    serialzer = TaskSerializer(tasks, many=True)
-    return Response(serialzer.data)
-
-
-@api_view(['GET'])
-def taskDetail(request,pk):
-    tasks = Task.objects.get(id=pk)
-    serialzer = TaskSerializer(tasks, many=False)
-    return Response(serialzer.data)
-
-
-@api_view(['POST'])
-def taskCreate(request):
-    serialzer = TaskSerializer(data=request.data)
-
-    if serialzer.is_valid():
-        serialzer.save()
-
-    return Response(serialzer.data)
-
-
-@api_view(['POST'])
-def taskUpdate(request,pk):
-    task = Task.objects.get(id=pk)
-    serialzer = TaskSerializer(instance=task, data=request.data)
-
-    if serialzer.is_valid():
-        serialzer.save()
-
-    return Response(serialzer.data)
-
-
-@api_view(['DELETE'])
-def taskDelete(request,pk):
-    task = Task.objects.get(id=pk)
-    task.delete()    
-
-    return Response(f'Item {task} successfully deleted')
-
-
-
-
 
 @api_view(['POST'])
 def login(request):
@@ -125,3 +76,50 @@ def patient_update(request, username):
         serializer.save()
         return Response(serializer.data)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+
+# EXAMPLES
+@api_view(['GET'])
+def taskList(request):
+    tasks = Task.objects.all()
+    serialzer = TaskSerializer(tasks, many=True)
+    return Response(serialzer.data)
+
+
+@api_view(['GET'])
+def taskDetail(request,pk):
+    tasks = Task.objects.get(id=pk)
+    serialzer = TaskSerializer(tasks, many=False)
+    return Response(serialzer.data)
+
+
+@api_view(['POST'])
+def taskCreate(request):
+    serialzer = TaskSerializer(data=request.data)
+
+    if serialzer.is_valid():
+        serialzer.save()
+
+    return Response(serialzer.data)
+
+
+@api_view(['POST'])
+def taskUpdate(request,pk):
+    task = Task.objects.get(id=pk)
+    serialzer = TaskSerializer(instance=task, data=request.data)
+
+    if serialzer.is_valid():
+        serialzer.save()
+
+    return Response(serialzer.data)
+
+
+@api_view(['DELETE'])
+def taskDelete(request,pk):
+    task = Task.objects.get(id=pk)
+    task.delete()    
+
+    return Response(f'Item {task} successfully deleted')

@@ -15,9 +15,9 @@ class InsuranceProvider(AbstractUser):
         verbose_name_plural = 'InsuranceProvider'
 
 class Insurance_plans(models.Model):
-      pl_id =models.BigAutoField(primary_key=True)
-      i_id=models.ForeignKey(InsuranceProvider,on_delete=models.CASCADE)
-      desc=models.TextField()
+      plan_id =models.BigAutoField(primary_key=True)
+      insurance_id=models.ForeignKey(InsuranceProvider,on_delete=models.CASCADE)
+      description=models.TextField()
       
 class Patient(AbstractUser):
     firstname = models.CharField(max_length=100)
@@ -53,7 +53,7 @@ class Doctor(AbstractUser):
         verbose_name_plural = 'Doctor'
 
 class Doctor_rating(models.Model):
-    d_id=models.ForeignKey(Doctor,on_delete=models.CASCADE)
+    doctor_id=models.ForeignKey(Doctor,on_delete=models.CASCADE)
     comments=models.TextField()
     Rating=[('1','Worst'),('2','Bad'),('3','Average'),('4','Good'),('5','Excellent')]
     ratings=models.IntegerField(choices=Rating,default=0)
@@ -61,21 +61,21 @@ class Doctor_rating(models.Model):
         verbose_name_plural = 'Doctor Ratings'
 
 class Availability(models.Model):
-    d_id=models.ManyToManyField(Doctor)
+    doctor_id=models.ManyToManyField(Doctor)
     date=models.DateField()
     time=models.TimeField()
     class Meta:
         verbose_name_plural = 'Availability'
 
 class Patient_History(models.Model):
-    r_id =models.BigAutoField(primary_key=True)
-    p_id=models.ForeignKey(Patient,on_delete=models.CASCADE)
+    report_id =models.BigAutoField(primary_key=True)
+    patient_id=models.ForeignKey(Patient,on_delete=models.CASCADE)
     description=models.TextField()
     class Meta:
         verbose_name_plural = 'Patient History'
 
 class Schedule_app(models.Model):
-    p_id=models.ForeignKey(Patient,on_delete=models.CASCADE)
-    d_id=models.ForeignKey(Doctor,on_delete=models.CASCADE)
+    patient_id=models.ForeignKey(Patient,on_delete=models.CASCADE)
+    doctor_id=models.ForeignKey(Doctor,on_delete=models.CASCADE)
     class Meta:
         verbose_name_plural = 'Schedule Appointment'

@@ -51,3 +51,31 @@ class Doctor(AbstractUser):
 
     class Meta:
         verbose_name_plural = 'Doctor'
+
+class Doctor_rating(models.Model):
+    d_id=models.ForeignKey(Doctor,on_delete=models.CASCADE)
+    comments=models.TextField()
+    Rating=[('1','Worst'),('2','Bad'),('3','Average'),('4','Good'),('5','Excellent')]
+    ratings=models.IntegerField(choices=Rating,default=0)
+    class Meta:
+        verbose_name_plural = 'Doctor Ratings'
+
+class Availability(models.Model):
+    d_id=models.ManyToManyField(Doctor)
+    date=models.DateField()
+    time=models.TimeField()
+    class Meta:
+        verbose_name_plural = 'Availability'
+
+class Patient_History(models.Model):
+    r_id =models.BigAutoField(primary_key=True)
+    p_id=models.ForeignKey(Patient,on_delete=models.CASCADE)
+    description=models.TextField()
+    class Meta:
+        verbose_name_plural = 'Patient History'
+
+class Schedule_app(models.Model):
+    p_id=models.ForeignKey(Patient,on_delete=models.CASCADE)
+    d_id=models.ForeignKey(Doctor,on_delete=models.CASCADE)
+    class Meta:
+        verbose_name_plural = 'Schedule Appointment'

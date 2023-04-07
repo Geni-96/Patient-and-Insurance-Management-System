@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="newplay.css" />
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <title>Registration</title>
+</head>
+<body>
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
+        <nav class="nav">
+            <img src='react-logo.png' class="nav-logo" />
+            <ul class="nav-items-2">
+            <li><a href="www.google.com"> Home</a></li>
+            <li><a href="www.google.com">About Us</a></li>
+            <li><a href="www.google.com">Services</a></li>
+            <ul class="nav-items">  
+        </nav> 
+    </div>
+  </header>
+
+    <div class="outer-card">
+        <div class="card"> 
+            <div class="innerCard">
+                <h2>Registration</h2>
+                <form action="form.html">
+                    <div class="row1">
+                        <div class="column1">
+                            <p>First Name</p>
+                            <input class="forminput" type="text" placeholder="Enter your first name" id="box" required/><br/><br/>
+                            <p>Email</p>
+                            <input class="forminput" type="text" placeholder="Enter your email" id="box" required/><br/><br/>
+                            <p>Password</p>
+                            <input class="forminput" type="password" placeholder="Enter your password" id="box" required/><br/><br/>
+                        </div>
+                        <div class="column2">
+                            <p>Last Name</p>
+                            <input class="forminput" type="text" placeholder="Enter your last name" id="box" required/><br/><br/>
+                            <p>Phone number</p>
+                            <input class="forminput" type="numeric" placeholder="Enter your phone number" id="box" required/><br/><br/>
+                            <p>Re-type Password</p>
+                            <input class="forminput" type="password" placeholder="Confirm your password" id="box" required/><br/><br/>
+                        </div>    
+                    </div>
+                    <div id="usertype">
+                        <div class="column1">
+                            <label class="specify">User Type :</label>
+                        </div>
+                        <div class="column2">
+                            <label class="usertype">Doctor</label>
+                            <input type="radio" id="doctor" value="Doctor" name="usertype"/>
+                            <label class="usertype">Patient</label>
+                            <input type="radio" id="patient" value="Patient" name="usertype"/>
+                            <label class="usertype">Insurance Provider</label>
+                            <input type="radio" id="insuranceprovider" value="Insurance Provider" name="usertype"/>
+                        </div>
+                    </div>
+                    <div id="gender">
+                        <div class="column1">
+                            <label class="specify">Gender :</label>
+                        </div>
+                        <div class="column2b">
+                            <label name="gender">Male</label>
+                            <input type="radio" id="male" value="Male" name="gender"/>
+                            <label name="gender">Female</label>
+                            <input type="radio" id="female" value="Female" name="gender"/>
+                            <label name="gender">Other</label>
+                            <input type="radio" id="other" value="Other" name="gender"/>
+                        </div>
+                    </div>
+                </form>
+                <button>Submit</button>
+            </div>
+        </div>
+    </div>  
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <p>&copy; 2023 CareConnect Group 23. All rights reserved.</p>
+            <ul class="social-icons">
+              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </footer>
+</body>
+</html>

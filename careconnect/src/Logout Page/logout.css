@@ -4,6 +4,28 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.card {
+    /* height: 600px;
+    width:auto; */
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0px 20px rgba(0,0,0,0.25), 0 6px 6px rgba(0,0,0,0.25);
+}
+.outer_card {
+    background: whitesmoke;
+    background-repeat: no-repeat;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding-bottom: 50px;
+}
+
 p {
     font-size: 1.5rem;
     padding: 2.0rem 0;
@@ -21,35 +43,90 @@ button {
     display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 button:hover { 
     background-color: #68b1bd;
 }
 .container {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .logo{
-    max-width: 30%;
+    width: 80px;
+    height: auto;
 }
 .hands{
-    width: 50wv;
-    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
     display: block;
+    float: right;
     object-fit: cover;
     object-position: center;
+    /* border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px; */
 }
 .column1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    float: left;
+    /* width: 50%; */
+    padding: 5rem;
 }
-.column2{
-    display:inline-block;
+/* .column2{
     width: 50%;
-}
+} */
+
+footer {
+    background-color: white;
+    margin: 15px;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  .social-icons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .social-icons li {
+    margin: 0 10px;
+  }
+  
+  .social-icons a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #444;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    /* background-color: #333; */
+    background-color: #68b1bd;
+  }
+
+@media screen and (max-width: 600px) {
+    .column2 {
+      width: 100%;
+    }
+  }

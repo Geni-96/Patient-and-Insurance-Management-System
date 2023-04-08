@@ -1,21 +1,58 @@
-import React from 'react';
-import './logout.css';
-import CareConnect from '../LoginPage/CareConnect.png'
-import hands from './hands.jpg'
-
-export default function Logout(){
-    return(
-        <>
-            <div className="container">
-                <div className="column1">
-                <img className="logo" src={CareConnect} alt="logo"></img>
-                    <h1>You have been successfully logged out.</h1>
-                    <p>Thank you for using CareConnect for all of your healtcare needs.</p>
-                    <button>Sign in again</button>
-                </div>
-                <div className="column2">
-                    <img className="hands" src={hands} alt="logo"></img>
-                </div>
-            </div>
-        </>)
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="logout.css" />
+    <link rel="stylesheet" href="nav.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <title>logout</title>
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="react-logo1.png" alt="logo" />
+      <nav>
+        <ul class="nav_links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#"><button>Sign Up</button></a>
+      <a class="cta2" href="#"><button>Login</button></a>
+    </header>
+    <div class="outer_card">
+      <div class="card">
+        <div class="container">
+          <div class="column1">
+            <h1>You have been successfully logged out.</h1>
+            <p>
+              Thank you for using CareConnect for all of your healthcare needs.
+            </p>
+            <!-- <button>Sign in</button> -->
+          </div>
+          <div class="column2">
+            <img class="hands" src="hands.jpg" alt="holding hands" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p>&copy; 2023 CareConnect Group 23. All rights reserved.</p>
+          <ul class="social-icons">
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </body>
+</html>

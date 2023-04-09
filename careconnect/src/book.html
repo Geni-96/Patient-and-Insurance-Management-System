@@ -18,9 +18,9 @@
   <div class="page">
             <nav class = "book-nav">
             <div class="col-md-6">
-                            {% load static %} <img src={% static 'logo.png' %} alt="PNIM Logo"
-                            width="125" height="100" />
-                          </div>
+                {% load static %} <img src={% static 'logo.png' %} alt="PNIM Logo"
+                width="125" height="100" />
+            </div>
             <div class="search-wrap">
                 <select class="dropdown">
                     <option value="Doctor">Doctor</option>
@@ -29,7 +29,8 @@
                 <div class="search">
                     <input type="text" placeholder="Search"></input>
                     <button type="submit"><i class="fa fa-search"></i></button>
-                    <button class="chat" type="text">CHAT</button>
+                    <button class="chat">CHAT</button>
+                    <button class="logout">Logout</button>
                 </div>
             </div>
         </nav>
@@ -60,9 +61,5 @@
         </div>
   <script src="build/vanilla-calendar.min.js"></script>
   <script src="book.js" type="module"></script>
-
-  
-  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
 </body>
-
 </html>

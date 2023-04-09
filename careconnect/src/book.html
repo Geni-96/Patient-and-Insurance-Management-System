@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Appointment Booking</title>
+  <link href="book.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/themes/light.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/themes/dark.min.css" rel="stylesheet">
+    <!-- Plugin JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js" defer></script>
+  
+</head>
+
+<body>
+  <div class="page">
+            <nav class = "book-nav">
+            <div class="col-md-6">
+                            {% load static %} <img src={% static 'logo.png' %} alt="PNIM Logo"
+                            width="125" height="100" />
+                          </div>
+            <div class="search-wrap">
+                <select class="dropdown">
+                    <option value="Doctor">Doctor</option>
+                    <option value="Insurance Provider">Insurance Provider</option>
+                </select>
+                <div class="search">
+                    <input type="text" placeholder="Search"></input>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <button class="chat" type="text">CHAT</button>
+                </div>
+            </div>
+        </nav>
+        <div class="main">
+            <div class='heading'><h2>Book Your Appointment</h2></div>
+            <form class="contain"> 
+                <div id="calendar"></div>
+                <div class="time">
+                    <p>Please select a time</p>
+                    <select id="time" value={time}>
+                        <option value="None">None</option>
+                        <option value="10">10 a.m</option>
+                        <option value="11">11 a.m</option>
+                        <option value="12">12 a.m</option>
+                        <option value="2">2 p.m</option>
+                        <option value="3">3 p.m</option>
+                        <option value="4">4 p.m</option>
+                        <option value="5">5 p.m</option>
+                        <option value="6">6 p.m</option>
+                    </select>
+                </div>
+              <label for="reason">Please enter a reason for your visit: </label>
+                <textarea id="reason" name="reason" rows="2" cols="50"></textarea>
+                <input type="submit" value ="Submit" class ="timesubmit">
+            </form>
+        </div>
+        </div>
+        </div>
+  <script src="build/vanilla-calendar.min.js"></script>
+  <script src="book.js" type="module"></script>
+
+  
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+</body>
+
+</html>

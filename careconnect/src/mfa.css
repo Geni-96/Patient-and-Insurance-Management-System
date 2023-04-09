@@ -1,0 +1,31 @@
+.mfapage{
+    height:100vh;
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background-color: white;
+    width: 35%;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 1px 1px 2px 2px;
+}
+input {
+    margin: 10px;
+
+}
+.col{
+    /* padding: 20px; */
+    text-align: center;
+}
+button{
+    margin-bottom: 10px;
+    background-color: rgb(91, 168, 175) !important;
+}
+img{
+    width: 100px;
+    height:100px;
+}

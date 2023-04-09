@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Appointment Booking</title>
+  <link href="doc_app.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+  <div class="page">
+            <nav class = "doc-nav">
+            <div class="col-md-6">
+                {% load static %} <img src={% static 'logo.png' %} alt="PNIM Logo"
+                width="125" height="100" />
+            </div>
+            <div class="search-wrap">
+                <select class="dropdown">
+                    <option value="Doctor">Doctor</option>
+                    <option value="Insurance Provider">Insurance Provider</option>
+                </select>
+                <div class="search">
+                    <input type="text" placeholder="Search"></input>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </nav>
+        <div class="app-page">
+            <div class="page-buttons">
+                <button class="buttons-appointment" type="text">UpComing Appointments</button>
+                <button class="buttons-appointment" type="text">Past Appointments</button>
+            </div>
+            <div class="results">
+            <div class="section">
+            <div class="container">
+                <div class="Details">
+                    <h2>{ doctor.firstname } { doctor.lastname }</h2>
+                    <p>Date: {date}</p>
+                    <p>Time: {time}</p>
+                </div>
+                <div class="buttons">
+                    <button class="doc-buttons">View Patient's Profile</button>
+                    <button class="doc-buttons">SEND A TEXT</button>
+                    <button class="doc-buttons">Cancel Appointment</button>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+        </div>
+</body>
+
+</html>

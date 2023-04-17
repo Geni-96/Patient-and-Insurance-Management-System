@@ -1,0 +1,50 @@
+.logo{
+  width:100px;
+  height:80px;
+  margin-right: 20px;
+}
+
+.search-button{
+  background-color: #4E9BA6;
+  color: white;
+  border-radius: 5px;
+  margin-left:0;
+}
+
+.chat{
+  background-color: #4E9BA6;
+  color: white;
+  border-radius: 5px;
+  margin-left:10px;
+}
+.logout{
+  background-color: #4E9BA6;
+  color: white;
+  border-radius: 5px;
+  margin-left:10px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid;
+    border-color: #d5d4d8;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 30px;
+  background: white;
+  
+}
+.deleteplan{
+  padding:5px;
+  border-radius: 5px;
+  width: 150px;
+  background:  #4E9BA6;
+  color: white;
+}
+
+.plan-text{
+  font-size: large;
+  color: #4E9BA6;
+}

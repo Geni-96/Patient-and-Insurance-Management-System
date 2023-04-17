@@ -5,27 +5,27 @@
     justify-content: center;
     align-items: center;
 }
-.container{
+.input-group{
+  margin-bottom: 20px;
+}
+.container-sm{
     background-color: white;
-    width: 35%;
+/*     width: 35%; */
     border-radius: 10px;
     overflow: hidden;
     padding: 20px;
     box-shadow: 1px 1px 2px 2px;
 }
-input {
-    margin: 10px;
 
-}
 .col{
     /* padding: 20px; */
-    text-align: center;
+  text-align: center;
 }
 button{
     margin-bottom: 10px;
     background-color: rgb(91, 168, 175) !important;
 }
-img{
-    width: 100px;
+.logo{
+    width: 120px;
     height:100px;
 }

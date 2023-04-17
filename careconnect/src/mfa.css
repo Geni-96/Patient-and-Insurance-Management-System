@@ -5,27 +5,60 @@
     justify-content: center;
     align-items: center;
 }
-.container{
-    background-color: white;
-    width: 35%;
+:root{
+  --text-light: black;
+  --bg-light: white;
+  --text-dark: white;
+  --bg-dark:#222020;
+}
+@media(prefers-color-scheme: light){
+  :root {
+    --text: var(--text-light);
+    --bkg: var(--bg-light);
+  }
+}
+@media(prefers-color-scheme: dark){
+  :root {
+    --text: var(--text-dark);
+    --bkg: var(--bg-dark);
+  }
+}
+[color-scheme="dark"]{
+  --text: var(--text-dark);
+  --bkg: var(--bg-dark);
+}
+
+[color-scheme="light"] {
+  --text: var(--text-light);
+  --bkg: var(--bg-light);
+}
+
+nav{
+  background: var(--bkg);
+  color: var(--text);
+}
+.input-group{
+  margin-bottom: 20px;
+}
+.container-sm{
+    background-color: var(--bkg);
+/*     width: 35%; */
     border-radius: 10px;
     overflow: hidden;
     padding: 20px;
     box-shadow: 1px 1px 2px 2px;
+  color:var(--text);
 }
-input {
-    margin: 10px;
 
-}
 .col{
     /* padding: 20px; */
-    text-align: center;
+  text-align: center;
 }
 button{
     margin-bottom: 10px;
     background-color: rgb(91, 168, 175) !important;
 }
-img{
-    width: 100px;
+.logo{
+    width: 120px;
     height:100px;
 }

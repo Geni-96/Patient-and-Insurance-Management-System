@@ -1,7 +1,42 @@
 .page{
     background: rgb(234, 242, 245);
 }
+button{
+  border: none;
+  padding: 5px;
+}
+:root{
+  --text-light: black;
+  --bg-light: white;
+  --text-dark: white;
+  --bg-dark:#222020;
+}
+@media(prefers-color-scheme: light){
+  :root {
+    --text: var(--text-light);
+    --bkg: var(--bg-light);
+  }
+}
+@media(prefers-color-scheme: dark){
+  :root {
+    --text: var(--text-dark);
+    --bkg: var(--bg-dark);
+  }
+}
+[color-scheme="dark"]{
+  --text: var(--text-dark);
+  --bkg: var(--bg-dark);
+}
 
+[color-scheme="light"] {
+  --text: var(--text-light);
+  --bkg: var(--bg-light);
+}
+
+nav{
+  background: var(--bkg);
+  color: var(--text);
+}
 .logo{
   width:100px;
   height:80px;
@@ -10,20 +45,21 @@
 
 .search-button{
   background-color: #4E9BA6;
-  color: white;
+  color: var(--text);
   border-radius: 5px;
   margin-left:0;
+  width: 35px;
 }
 
 .chat{
   background-color: #4E9BA6;
-  color: white;
+  color:var(--text);
   border-radius: 5px;
   margin-left:10px;
 }
 .logout{
   background-color: #4E9BA6;
-  color: white;
+  color: var(--text);
   border-radius: 5px;
   margin-left:10px;
 }
@@ -40,9 +76,10 @@
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: white;
+    background-color: var(--bkg);
     border-style: solid;
     border-color: #8f8787;
+  color: var(--text);
 }
 .time{
     display: flex;
@@ -59,7 +96,7 @@
 }
 
 .timesubmit{
-    color:white;
+    color:var(--text);
     background-color: #4E9BA6;
     height: 50px;
     font-size:larger;
@@ -79,7 +116,7 @@
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     color:#4E9BA6;
-    background-color: white;
+    background-color: var(--bkg);
 }
 .logo{
   height: 100px;

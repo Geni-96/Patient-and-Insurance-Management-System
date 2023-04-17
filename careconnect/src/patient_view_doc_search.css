@@ -1,0 +1,110 @@
+.page{
+    background: rgb(234, 242, 245);
+}
+button{
+  border: none;
+  padding: 5px;
+}
+:root{
+  --text-light: black;
+  --bg-light: white;
+  --text-dark: white;
+  --bg-dark:#222020;
+}
+@media(prefers-color-scheme: light){
+  :root {
+    --text: var(--text-light);
+    --bkg: var(--bg-light);
+  }
+}
+@media(prefers-color-scheme: dark){
+  :root {
+    --text: var(--text-dark);
+    --bkg: var(--bg-dark);
+  }
+}
+[color-scheme="dark"]{
+  --text: var(--text-dark);
+  --bkg: var(--bg-dark);
+}
+
+[color-scheme="light"] {
+  --text: var(--text-light);
+  --bkg: var(--bg-light);
+}
+
+nav{
+  background: var(--bkg);
+  color: var(--text);
+  
+}
+.logo{
+  width:100px;
+  height:80px;
+  margin-right: 20px;
+}
+
+.search-button{
+  background-color: #4E9BA6;
+  color: var(--text);
+  border-radius: 5px;
+  margin-left:0;
+}
+
+.chat{
+  background-color: #4E9BA6;
+  color: var(--text);
+  border-radius: 5px;
+  margin-left:10px;
+}
+.logout{
+  background-color: #4E9BA6;
+  color: var(--text);
+  border-radius: 5px;
+  margin-left:10px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    border-color: #d5d4d8;
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin: 20px;
+  background: var(--bkg);
+  color: var(--text);
+}
+.Details{
+    margin-left: 150px;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right:80px;
+    cursor: pointer;
+}
+.doc-buttons{
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom:10px;
+}
+button{
+    color: var(--text) ;
+    background-color: #4E9BA6;
+}
+
+.buttons-appointment{
+    margin-right: 60px;
+    overflow: hidden;
+    border-radius: 5px;
+    width: 300px;
+    padding: 7px;
+}
+.container-text{
+  color:#4E9BA6;
+  font-weight: bold;
+}

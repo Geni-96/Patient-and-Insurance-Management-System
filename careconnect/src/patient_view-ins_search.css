@@ -46,6 +46,10 @@
   --blu: var(--bg-blue1);
   --border:var(--border1);
 }
+
+nav{
+  background: var(--bkg);
+}
 .search-button{
   background-color: #4E9BA6;
   color: var(--text);

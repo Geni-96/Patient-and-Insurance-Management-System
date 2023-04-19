@@ -1,38 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
-
-
-#header {
-    background: white;
-    padding-bottom: 34px;
-    border-bottom: 3px solid #4e9ba6;
-    height: 80px;
-    transition: all 0.5s;
-    z-index: 997;
-    transition: all 0.5s;
-    position:sticky;
-    position:-webkit-sticky;
-    top:0px;
-  }
-
-.nav {
-    overflow: hidden;
-    justify-content: space-between;
-    align-items: center;
-}
-.dif{
-    color:#4e9ba6;
-    padding: 10px;
-    
-    
-}
-.dif:hover{
-    color: white;
-    padding: 10px;
-    
+    font-family: Betm Rounded;
+    box-sizing: border-box;
 }
 
 .nav-logo {
@@ -42,73 +12,6 @@
     left:0;
 }
 
-.nav-items {
-    font-family: Betm Rounded;
-    font-size:25px;
-    color: #4e9ba6;
-    float: right;
-    list-style: none;
-    display: flex; 
-}
-
-.nav-items > li {
-    padding: 10px;
-    float: left; 
-}
-
-.btn-primary{
-    font-size:25px;
-    font-family: Betm Rounded;
-    border:none;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: #333;
-}
-.btn-primary:hover{ 
-    background-color: #4e9ba6;
-    border-radius: 10px;
-    box-shadow: #333;
-}
-
-.nav-items-2 {
-    font-family: Betm Rounded;
-    font-size:25px;
-    padding-top: 20px;
-    float: right;
-    list-style: none;
-    display: flex;
-    cursor: pointer;   
-}
-
-.nav-items-2 > li {
-    padding: 20px;
-    float: left;
-}
-
-.nav-items-2>li:first-child {
-    margin-left: 0;
-}
-
-.nav-items-2 > li:hover {
-  position: relative;
-}
-
-.nav-items-2 > li::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: transparent;
-    transition: all 0.3s ease;
-  }
-  
-.nav-items-2> li:hover::before {
-    background-color: #d699ad;
-}
 a{
     text-decoration: none;
     color: black;
@@ -133,7 +36,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 40px;
+    padding: 4rem;
     box-shadow: 0 0px 20px rgba(0,0,0,0.25), 0 6px 6px rgba(0,0,0,0.25);
 }
 .lock-icon {
@@ -152,7 +55,8 @@ p {
 }
 .passInput {
     /* text-align: center; */
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    margin-bottom: 30px;
     width: 85%;
     background: transparent;
     border: none;
@@ -171,10 +75,14 @@ button {
     border-radius: 25px;
     padding: 10px 76px;
     font-size: 16px;
-    text-transform: uppercase;
-    /* transition: all .2s ease-in-out;  */
     cursor: pointer;
 }
+
+.submit {
+    margin-top: 0.5em;
+    text-transform: uppercase;
+}
+
 .passwd {
     color: rgb(88, 88, 88);
     padding-top: 1.0em;
@@ -236,4 +144,36 @@ footer {
   .social-icons a:hover {
     /* background-color: #333; */
     background-color: #68b1bd;
+  }
+
+  @media (max-width: 775px) {
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+        padding-bottom: 20px;
+    }
+
+    .submit {
+        margin-top: 2px;
+        background-color: #4e9ba6;
+        color: white;
+        border-color: white;
+        outline: none;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 40px;
+        font-size: 16px;
+        text-transform: uppercase;
+        /* transition: all .2s ease-in-out;  */
+        cursor: pointer;
+    }
+
+    .social-icons li:hover {
+        background-color: white;
+    }
+    
   }

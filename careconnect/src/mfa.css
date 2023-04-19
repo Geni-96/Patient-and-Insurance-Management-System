@@ -33,10 +33,6 @@
   --bkg: var(--bg-light);
 }
 
-nav{
-  background: var(--bkg);
-  color: var(--text);
-}
 .input-group{
   margin-bottom: 20px;
 }
@@ -59,6 +55,6 @@ button{
     background-color: rgb(91, 168, 175) !important;
 }
 .logo{
-    width: 120px;
+    width: 100px;
     height:100px;
 }

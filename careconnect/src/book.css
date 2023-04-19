@@ -1,45 +1,57 @@
-.page{
-    background: rgb(234, 242, 245);
-}
+
 button{
   border: none;
   padding: 5px;
 }
+.page{
+    background: var(--blu);
+}
+
 :root{
   --text-light: black;
   --bg-light: white;
   --text-dark: white;
   --bg-dark:#222020;
+  --bg-blue1: rgb(234, 242, 245);
+  --bg-blue2: rgb(54, 54, 54);
+  --border1:#d5d4d8;
+  --border2:#474748;
 }
 @media(prefers-color-scheme: light){
   :root {
     --text: var(--text-light);
     --bkg: var(--bg-light);
+    --blu: var(--bg-blue1);
+    --border:var(--border1);
   }
 }
 @media(prefers-color-scheme: dark){
   :root {
     --text: var(--text-dark);
     --bkg: var(--bg-dark);
+    --blu: var(--bg-blue2);
+    --border:var(--border2);
   }
 }
 [color-scheme="dark"]{
   --text: var(--text-dark);
   --bkg: var(--bg-dark);
+  --blu: var(--bg-blue2);
+  --border:var(--border2);
 }
 
 [color-scheme="light"] {
   --text: var(--text-light);
   --bkg: var(--bg-light);
+  --blu: var(--bg-blue1);
+  --border:var(--border1);
 }
-
 nav{
   background: var(--bkg);
-  color: var(--text);
 }
 .logo{
   width:100px;
-  height:80px;
+  height:100px;
   margin-right: 20px;
 }
 
@@ -78,7 +90,7 @@ nav{
     flex-wrap: wrap;
     background-color: var(--bkg);
     border-style: solid;
-    border-color: #8f8787;
+    border-color: var(--border);
   color: var(--text);
 }
 .time{
@@ -92,7 +104,7 @@ nav{
   font-size: large;
 }
 .reason textarea{
-    width: 350px;
+    width: 300px;
 }
 
 .timesubmit{
@@ -121,6 +133,7 @@ nav{
 .logo{
   height: 100px;
   width: 100px;
+  margin-right: 20px;
 }
 #calendar{
   width:auto;

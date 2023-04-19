@@ -1,5 +1,5 @@
 .page{
-    background: rgb(234, 242, 245);
+    background: var(--blu);
 }
 
 :root{
@@ -7,36 +7,47 @@
   --bg-light: white;
   --text-dark: white;
   --bg-dark:#222020;
+  --bg-blue1: rgb(234, 242, 245);
+  --bg-blue2: rgb(54, 54, 54);
+  --border1:#d5d4d8;
+  --border2:#474748;
 }
 @media(prefers-color-scheme: light){
   :root {
     --text: var(--text-light);
     --bkg: var(--bg-light);
+    --blu: var(--bg-blue1);
+    --border:var(--border1);
   }
 }
 @media(prefers-color-scheme: dark){
   :root {
     --text: var(--text-dark);
     --bkg: var(--bg-dark);
+    --blu: var(--bg-blue2);
+    --border:var(--border2);
   }
 }
 [color-scheme="dark"]{
   --text: var(--text-dark);
   --bkg: var(--bg-dark);
+  --blu: var(--bg-blue2);
+  --border:var(--border2);
 }
 
 [color-scheme="light"] {
   --text: var(--text-light);
   --bkg: var(--bg-light);
+  --blu: var(--bg-blue1);
+  --border:var(--border1);
 }
-
 nav{
   background: var(--bkg);
-  color: var(--text);
 }
+
 .logo{
   width:100px;
-  height:80px;
+  height:100px;
   margin-right: 20px;
 }
 
@@ -93,7 +104,7 @@ button{
     flex-direction: column;
     justify-content: space-between;
     border: solid;
-    border-color: #d5d4d8;
+    border-color:var(--border);
     border-radius: 10px;
     padding: 1.5rem;
     margin: 30px;
@@ -111,6 +122,3 @@ button{
   font-size: large;
   color:#3ba0b0;
 }
-/* .logout{
-  
-} */

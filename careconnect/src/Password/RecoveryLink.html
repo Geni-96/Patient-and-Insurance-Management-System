@@ -5,26 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="recoveryLink.css" />
+    <link rel="stylesheet" href="basenav.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
     <title>recoveryLink</title>
   </head>
   <body>
-    <header id="header" class="fixed-top d-flex align-items-center ">
-      <div class="container d-flex justify-content-between align-items-center">
-          <nav class="nav">
-              <img src='react-logo.png' class="nav-logo" />
-              <ul class="nav-items-2">
-              <li><a href="www.google.com"> Home</a></li>
-              <li><a href="www.google.com">About Us</a></li>
-              <li><a href="www.google.com">Services</a></li>
-              <ul class="nav-items">  
-              <!-- <li><button class="btn btn-primary" ><a class="dif" href="/signup">Sign Up</a></button></li>
-              <li><button class="btn btn-primary"><a class="dif" href="/login">Log In </a></button></li> 
-              </ul>
-              </ul> -->
-          </nav> 
+    <nav>
+      <div class="logo">
+        <a href="your landing page url">
+          <img src="react-logo.png" class="nav-logo" />
+        </a>
       </div>
-    </header>
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button"></div>
+      </label>
+      <ul class="menu">
+        <li class="underline"><a href="#"> Home</a></li>
+        <li class="underline"><a href="#">About Us</a></li>
+        <li class="underline"><a href="#">Services</a></li>
+        <li>
+          <a href="/signup"><button>Sign Up</button></a>
+        </li>
+        <li>
+          <a href="/login"><button>Login</button></a>
+        </li>
+      </ul>
+    </nav>
     <div class="outer-card">
       <div class="card">
         <p class="lock-icon"><i class="fas fa-lock"></i></p>

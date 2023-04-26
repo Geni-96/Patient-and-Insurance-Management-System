@@ -1,0 +1,141 @@
+.logo{
+  width:100px;
+  height:100px;
+  margin-right: 20px;
+}
+.page{
+    background: var(--blu);
+}
+
+:root{
+  --text-light: black;
+  --bg-light: white;
+  --text-dark: white;
+  --bg-dark:#222020;
+  --bg-blue1: rgb(234, 242, 245);
+  --bg-blue2: rgb(54, 54, 54);
+  --border1:#d5d4d8;
+  --border2:#474748;
+}
+@media(prefers-color-scheme: light){
+  :root {
+    --text: var(--text-light);
+    --bkg: var(--bg-light);
+    --blu: var(--bg-blue1);
+    --border:var(--border1);
+  }
+}
+@media(prefers-color-scheme: dark){
+  :root {
+    --text: var(--text-dark);
+    --bkg: var(--bg-dark);
+    --blu: var(--bg-blue2);
+    --border:var(--border2);
+  }
+}
+[color-scheme="dark"]{
+  --text: var(--text-dark);
+  --bkg: var(--bg-dark);
+  --blu: var(--bg-blue2);
+  --border:var(--border2);
+}
+
+[color-scheme="light"] {
+  --text: var(--text-light);
+  --bkg: var(--bg-light);
+  --blu: var(--bg-blue1);
+  --border:var(--border1);
+}
+
+nav{
+  background: var(--bkg);
+}
+.search-button{
+  background-color: #4E9BA6;
+  color: var(--text);
+  border-radius: 5px;
+  margin-left:0;
+  width: 35px;
+}
+
+.chat{
+  background-color: #4E9BA6;
+  color: var(--text);
+  border-radius: 5px;
+  margin-left:10px;
+}
+.logout{
+  background-color: #4E9BA6;
+  color: var(--text);
+  border-radius: 5px;
+  margin-left:10px;
+}
+.page-buttons{
+  margin-top: 20px;
+  display: flex;
+  justify-content:center;
+}
+
+button{
+  color: var(--text) ;
+  background-color: #4E9BA6;
+  border: none;
+  padding: 5px;
+}
+
+.buttons-patient{
+    margin-right: 30px;
+    overflow: hidden;
+    border-radius: 5px;
+    width: 200px;
+    padding: 7px;
+}
+.modal-header{
+  background: radial-gradient(#d8dfdf, #4e9ba6);
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    border-color: var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 30px;
+  background: var(--bkg);
+  color:var(--text);
+  
+}
+.Details{
+    margin-left: 150px;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right:80px;
+    cursor: pointer;
+}
+.doc-buttons{
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom:10px;
+}
+button{
+    color: var(--text) ;
+    background-color: #4E9BA6;
+}
+
+.buttons-appointment{
+    margin-right: 60px;
+    overflow: hidden;
+    border-radius: 5px;
+    width: 300px;
+    padding: 7px;
+}
+.container-text{
+  color:#4E9BA6;
+  font-weight: bold;
+}

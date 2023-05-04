@@ -1,18 +1,18 @@
-# Software Engineering Project Repository
+# Patient & Insurance Management System Project Repository
 
-Code/Document repository for CSCI-P 565 Software Engineering - Spring 2023
+## TechStack: 
+- React
+- Django
+- Bootstrap
+- SQL
 
-**Team 23**
-
-**Theme**: Patient/Insurance Management System
-
-**Team Members**
-
-* Sejal Raju Bhanushali
-* Dedra Cole Downard
-* Rohan Shah
-* Gnaneswari Lolugu
-* Srikar Kashyap Pulipaka
+## Overview:
+- This application named "Care connect" is a patient and insurance management system which brings patients, doctors and insurance providers together. 
+- Patients can search for nearby doctors who accept their insurance and book appointments with them after checking doctor details like experience and reviews.
+- Patients can also look for insurance plans provided by different insurance providers and choose one that best fits their needs. They can also pay their bills.
+- Doctors can accept/delete appointments, clear doubts of patients via chat and view their medical history. They can also collaborate with insurance providers to better help their patients.
+- Insurance providers can chat with their patients, review the patient bills and accept/reject the claims. They can add/delete the plans they provide and they can even chat with the doctors they collaborated with.
+- Additional features: Two factor authentication, Covid19 beds availability, Notifications for every profile view.
 
 
 # Dependencies:
@@ -29,14 +29,6 @@ Code/Document repository for CSCI-P 565 Software Engineering - Spring 2023
 - npm i react-router-dom
 - npm install react-bootstrap
 
-# References
 
-# Postgres:
-- dbname = postgres
-- user = postgres
-- password = postgres
 
-# Django Admin:
-- username: geni
-- password: 12345
 
